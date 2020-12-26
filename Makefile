@@ -2,8 +2,8 @@ CC = gcc
 LD = gcc
 LDFLAGS =
 CFLAGS = -I. -O0
-OBJS = mkskillrand3.o mkskillrand4.o
-PROGS = mkskillrand3 mkskillrand4
+OBJS = mkskillrand3.o mkskillrand4.o mkskillblank.o
+PROGS = mkskillrand3 mkskillrand4 mkskillblank
 MANUALS_PS = manual.ps
 MANUALS_PDF = manual.pdf
 MANUALS_TEXT = manual.txt
@@ -39,6 +39,8 @@ $(PROGS): $(OBJS)
 	@$(LD) -o mkskillrand3 mkskillrand3.o $(LDFLAGS)
 	@echo " LD    mkskillrand4"
 	@$(LD) -o mkskillrand4 mkskillrand4.o $(LDFLAGS)
+	@echo " LD    mkskillblank"
+	@$(LD) -o mkskillblank mkskillblank.o $(LDFLAGS)
 
 manual: $(MANUALS_PS) $(MANUALS_PDF) $(MANUALS_TEXT)
 
