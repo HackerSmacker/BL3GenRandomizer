@@ -7,13 +7,16 @@
 
 
 int main(int argc, char** argv) {
+	char* filename = "";
 	if(argc < 2) {
-		printf("MKSKILLRAND Usage: \"mkskillrand3 out.txt\"\n");
-		exit(1);
+		filename = "skill_randomizer4.txt";
 	}
-	printf("MKSKILLRAND Skill randomizer generator. Trees = 4; output file = %s\n", argv[1]);
+	else {
+		filename = argv[1];
+	}
+	printf("MKSKILLRAND Skill randomizer generator. Trees = 4; output file = %s\n", filename);
 	FILE* outFile;
-	outFile = fopen(argv[1], "w");
+	outFile = fopen(filename, "w");
 	if(!outFile) {
 		printf("MKSKILLRAND Failed to open output file\n");
 		exit(1);
