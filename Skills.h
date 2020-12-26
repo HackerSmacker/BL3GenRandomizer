@@ -13,10 +13,16 @@ const char* skillTrees[] = {
 	"/Game/PlayerCharacters/Operative/_Shared/_Design/Character/Inventory/AbilityTree_Operative_Rampart",
 	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Character/Inventory/AbilityTree_Siren_Brawl",
 	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Character/Inventory/AbilityTree_Siren_FistOfTheElements",
-	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Character/Inventory/AbilityTree_Siren_MysticalAssault"
+	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Character/Inventory/AbilityTree_Siren_MysticalAssault",
+	"/Game/PlayerCharacters/Beastmaster/_DLC/Ixora/Character/AbilityTree_Beastmaster_DLCTree",
+	"/Game/PlayerCharacters/Gunner/_DLC/Ixora/Character/AbilityTree_Gunner_DLCTree",
+	"/Game/PlayerCharacters/Operative/_DLC/Ixora/Character/AbilityTree_Operative_DLCTree",
+	"/Game/PlayerCharacters/SirenBrawler/_DLC/Ixora/Character/AbilityTree_Siren_DLCTree"
+
 };
 
-const int numSkillTrees = 12;
+const int listNumSkillTrees3 = 12;
+const int listNumSkillTrees4 = 16;
 
 const char* skills[] = {
 	"/Game/PlayerCharacters/Beastmaster/_Shared/_Design/Passives/Bond1/Passive_Beastmaster_Bond_1",
@@ -162,10 +168,65 @@ const char* skills[] = {
 	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Passives/RuinTree/Restless/PassiveSkill_Siren_Restless",
 	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Passives/RuinTree/Transcend/Passive_Siren_Transcend",
 	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Passives/RuinTree/ViolentTapestry/PassiveSkill_Siren_ViolentTapestry",
-	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Passives/RuinTree/Wrath/Passive_Siren_Wrath"
+	"/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Passives/RuinTree/Wrath/Passive_Siren_Wrath",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_02/Passive_Beastmaster_DLCSkill_2",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_03/Passive_Beastmaster_DLCSkill_3",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_04/Passive_Beastmaster_DLCSkill_4",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_05/Passive_Beastmaster_DLCSkill_5",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_07/Passive_Beastmaster_DLCSkill_7",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_08/Passive_Beastmaster_DLCSkill_8",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_09/Passive_Beastmaster_DLCSkill_9",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_11/Passive_Beastmaster_DLCSkill_11",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_12/Passive_Beastmaster_DLCSkill_12",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_13/Passive_Beastmaster_DLCSkill_13",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_15/Passive_Beastmaster_DLCSkill_15",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_16/Passive_Beastmaster_DLCSkill_16",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_17/Passive_Beastmaster_DLCSkill_17",
+	"/Game/Beastmaster/_DLC/Ixora/Passives/DLCSkill_18/Passive_Beastmaster_DLCSkill_18",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_01/Passive_Gunner_DLCSkill_1",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_02/Passive_Gunner_DLCSkill_2",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_03/Passive_Gunner_DLCSkill_3",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_04/Passive_Gunner_DLCSkill_4",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_05/Passive_Gunner_DLCSkill_5",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_06/Passive_Gunner_DLCSkill_6",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_07/Passive_Gunner_DLCSkill_7",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_09/Passive_Gunner_DLCSkill_9",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_11/Passive_Gunner_DLCSkill_11",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_12/Passive_Gunner_DLCSkill_12",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_13/Passive_Gunner_DLCSkill_13",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_14/Passive_Gunner_DLCSkill_14",
+	"/Game/Gunner/_DLC/Ixora/Passives/DLCSkill_15/Passive_Gunner_DLCSkill_15",
+	"/Game/Gunner/_DLC/Ixora/Passives/Passive_Gunner_CausedElementalEffectParent",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_01/Passive_OperativeDLC_1",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_02/Passive_OperativeDLC_2",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_03/Passive_OperativeDLC_3",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_04/Passive_OperativeDLC_4",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_06/Passive_OperativeDLC_6",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_08/Passive_OperativeDLC_8",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_09/Passive_OperativeDLC_9",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_10/Passive_OperativeDLC_10",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_12/Passive_OperativeDLC_12",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_14/Passive_OperativeDLC_14",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_15/Passive_OperativeDLC_15",
+	"/Game/Operative/_DLC/Ixora/Passives/DLCSkill_16/Passive_OperativeDLC_16",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_02/Passive_Siren_DLCSkill_2",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_03/Passive_Siren_DLCSkill_3",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_04/Passive_Siren_DLCSkill_4",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_05/Passive_Siren_DLCSkill_5",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_06/Passive_Siren_DLCSkill_6",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_07/Passive_Siren_DLCSkill_7",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_10/Passive_Siren_DLCSkill_10",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_11/Passive_Siren_DLCSkill_11",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_13/Passive_Siren_DLCSkill_13",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_14/Passive_Siren_DLCSkill_14",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_15/Passive_Siren_DLCSkill_15",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_16/Passive_Siren_DLCSkill_16",
+	"/Game/SirenBrawler/_DLC/Ixora/Passives/DLCSkill_17/Passive_Siren_DLCSkill_17"
 };
 
-const int numSkills = 144;
+const int listNumSkills3 = 144;
+const int listNumSkills4 = 197;
+
 
 const char* fileHeader = {
 	"###\n### Skill Randomizer\n### Originally by SSpyR, enhanced by HackerSmacker\n### Generated by mkskillrand\n"
