@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
 		currentEnd = malloc(strlen(currentEndWithSlash) - 1);
 		strcpy(currentEnd, currentEndWithSlash + 1);
 		//printf("%s.%s is now a %s.%s\n", currentPath, currentEnd, replacerPath, replacerEnd);
-		fprintf(outFile, "SparkEarlyLevelPatchEntry,(1,1,0,MatchAll),%s.%s,Options.Options[0].Factory.Object..AIActorClass,0,,BlueprintGeneratedClass'\"%s.%s'\"\n", currentPath, currentEnd, replacerPath, replacerEndWithC);
+		fprintf(outFile, "SparkEarlyLevelPatchEntry,(1,1,0,MatchAll),%s.%s,Options.Options[0].Factory.Object..AIActorClass,0,,BlueprintGeneratedClass'\"%s.%s\"'\n", currentPath, currentEnd, replacerPath, replacerEndWithC);
 	}
 	fprintf(outFile, fileFooter);
 	return 0;
