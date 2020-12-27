@@ -434,4 +434,5 @@ SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Cha
 SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Character/Inventory/AbilityTree_Siren_MysticalAssault.AbilityTree_Siren_MysticalAssault,Tiers.Tiers[6].Object..Items.Items[1].Object..AbilityClass,0,,BlueprintGeneratedClass'"Passive_Beastmaster_Bond5.Passive_Beastmaster_Bond5_C"'
 SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Character/Inventory/AbilityTree_Siren_MysticalAssault.AbilityTree_Siren_MysticalAssault,Tiers.Tiers[6].Object..Items.Items[2].Object..ItemFrameName,0,,
 SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/SirenBrawler/_Shared/_Design/Character/Inventory/AbilityTree_Siren_MysticalAssault.AbilityTree_Siren_MysticalAssault,Tiers.Tiers[6].Object..Items.Items[2].Object..AbilityClass,0,,BlueprintGeneratedClass'"Passive_Gunner_Vampyr.Passive_Gunner_Vampyr_C"'
-### Thank you for choosing mkskillrand! EOF.
+
+### That's all folks!

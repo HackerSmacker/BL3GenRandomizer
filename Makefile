@@ -2,8 +2,8 @@ CC = gcc
 LD = gcc
 LDFLAGS =
 CFLAGS = -I. -O0
-OBJS = mkskillrand3.o mkskillrand4.o mkskillblank.o
-PROGS = mkskillrand3 mkskillrand4 mkskillblank
+OBJS = mkskillrand3.o mkskillrand4.o mkskillblank.o mkspawnrand.o
+PROGS = mkskillrand3 mkskillrand4 mkskillblank mkspawnrand
 MANUALS_PS = manual.ps
 MANUALS_PDF = manual.pdf
 MANUALS_TEXT = manual.txt
@@ -41,6 +41,8 @@ $(PROGS): $(OBJS)
 	@$(LD) -o mkskillrand4 mkskillrand4.o $(LDFLAGS)
 	@echo " LD    mkskillblank"
 	@$(LD) -o mkskillblank mkskillblank.o $(LDFLAGS)
+	@echo " LD    mkspawnrand"
+	@$(LD) -o mkspawnrand mkspawnrand.o $(LDFLAGS)
 
 manual: $(MANUALS_PS) $(MANUALS_PDF) $(MANUALS_TEXT)
 
@@ -49,12 +51,16 @@ install: $(PROGS) manual
 	@install mkskillrand3 $(PREFIX)/bin
 	@echo " INSTALL    mkskillrand4"
 	@install mkskillrand4 $(PREFIX)/bin
+	@echo " INSTALL    mkspawnrand"
+	@install mkspawnrand $(PREFIX)/bin
 
 uninstall:
 	@echo " RM    mkskillrand3"
 	@rm $(PREFIX)/bin/mkskillrand3
 	@echo " RM    mkskillrand4"
 	@rm $(PREFIX)/bin/mkskillrand4
+	@echo " RM    mkspawnrand"
+	@rm $(PREFIX)/bin/mkspawnrand
 
 .PHONY: clean
 

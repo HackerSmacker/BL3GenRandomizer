@@ -47,6 +47,6 @@ int main(int argc, char** argv) {
 			}
 		}
 	}
-	fprintf(outFile, "### Thank you for choosing mkskillrand! EOF.\n");
+	fprintf(outFile, fileFooter);
 	return 0;
 }

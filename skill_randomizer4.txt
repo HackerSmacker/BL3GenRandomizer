@@ -578,4 +578,5 @@ SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/SirenBrawler/_DLC/Ixora/Characte
 SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/SirenBrawler/_DLC/Ixora/Character/AbilityTree_Siren_DLCTree.AbilityTree_Siren_DLCTree,Tiers.Tiers[6].Object..Items.Items[1].Object..AbilityClass,0,,BlueprintGeneratedClass'"Passive_Beastmaster_DLCSkill_9.Passive_Beastmaster_DLCSkill_9_C"'
 SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/SirenBrawler/_DLC/Ixora/Character/AbilityTree_Siren_DLCTree.AbilityTree_Siren_DLCTree,Tiers.Tiers[6].Object..Items.Items[2].Object..ItemFrameName,0,,
 SparkPatchEntry,(1,1,0,),/Game/PlayerCharacters/SirenBrawler/_DLC/Ixora/Character/AbilityTree_Siren_DLCTree.AbilityTree_Siren_DLCTree,Tiers.Tiers[6].Object..Items.Items[2].Object..AbilityClass,0,,BlueprintGeneratedClass'"PassiveSkill_Gunner_AceUpIronBear.PassiveSkill_Gunner_AceUpIronBear_C"'
-### Thank you for choosing mkskillrand! EOF.
+
+### That's all folks!
