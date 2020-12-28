@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
 	else {
 		filename = argv[1];
 	}
-	printf("MKSPAWNRAND Skill randomizer generator. Use DLC = yes; output file = %s\n", filename);
+	printf("MKSPAWNRAND Spawn randomizer generator. Use DLC = yes; output file = %s\n", filename);
 	FILE* outFile;
 	outFile = fopen(filename, "w");
 	if(!outFile) {

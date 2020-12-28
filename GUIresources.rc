@@ -1,0 +1,46 @@
+#include "GUIresourceID.h"
+
+IDI_APPICON ICON "GUIicon.ico"
+
+IDD_SPAWNS DIALOGEX 0, 0, 98, 52
+CAPTION "Spawn Randomizer"
+FONT 8, "MS Sans Serif"
+BEGIN
+	PUSHBUTTON "Generate randomizer", IDC_SPAWNS_RUN, 7, 7, 84, 14
+	PUSHBUTTON "Open last output", IDC_SPAWNS_OPEN, 7, 31, 84, 14
+END
+
+IDD_SKILLS DIALOGEX 0, 0, 98, 52
+CAPTION "Skill Randomizer"
+FONT 8, "MS Sans Serif"
+BEGIN
+	PUSHBUTTON "Generate randomizer", IDC_SKILLS_RUN, 7, 7, 84, 14
+	PUSHBUTTON "Open last output", IDC_SKILLS_OPEN, 7, 31, 84, 14
+END
+
+IDD_ITEMS DIALOGEX 0, 0, 98, 52
+CAPTION "Item Randomizer"
+FONT 8, "MS Sans Serif"
+BEGIN
+	PUSHBUTTON "Generate randomizer", IDC_ITEMS_RUN, 7, 7, 84, 14
+	PUSHBUTTON "Open last output", IDC_ITEMS_OPEN, 7, 31, 84, 14
+END
+
+IDR_APPMENU MENU
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "E&xit", ID_FILE_EXIT
+	END
+	POPUP "F&unctions"
+	BEGIN
+		MENUITEM "Skill Randomizer", ID_FUNC_SKILLS
+		MENUITEM "Spawn Randomizer", ID_FUNC_SPAWNS
+		MENUITEM "Item Randomizer", ID_FUNC_ITEMS
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&Online Help", ID_HELP_ONLINE, GRAYED
+		MENUITEM "&About", ID_HELP_ABOUT
+	END
+END

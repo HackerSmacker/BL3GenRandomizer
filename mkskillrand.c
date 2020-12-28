@@ -10,7 +10,7 @@ int main(int argc, char** argv) {
 	srand(time(NULL));
 	char* filename = "";
 	if(argc < 2) {
-		filename = "skill_randomizer4.txt";
+		filename = "skill_randomizer.txt";
 	}
 	else {
 		filename = argv[1];
