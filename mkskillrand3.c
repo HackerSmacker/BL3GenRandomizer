@@ -54,8 +54,8 @@ int main(int argc, char** argv) {
 				skillEnd = malloc(strlen(skillEndWithSlash) - 1);
 				strcpy(skillEnd, skillEndWithSlash + 1);
 				//printf("%s.%s\n", classPath, classEnd);
-				fprintf(outFile, "SparkPatchEntry,(1,1,0,),%s.%s,Tiers.Tiers[%d].Object..Items.Items[%d].Object..ItemFrameName,0,,\n", classPath, classEnd, i, j);
-				fprintf(outFile, "SparkPatchEntry,(1,1,0,),%s.%s,Tiers.Tiers[%d].Object..Items.Items[%d].Object..AbilityClass,0,,BlueprintGeneratedClass'\"%s.%s_C\"'\n", classPath, classEnd, i, j, skillEnd, skillEnd);
+				fprintf(outFile, "SparkPatchEntry,(1,1,0,),%s.%s,Tiers.Tiers[%d].Object..Items.Items[%d].Object..ItemFrameName,0,,\r\n", classPath, classEnd, i, j);
+				fprintf(outFile, "SparkPatchEntry,(1,1,0,),%s.%s,Tiers.Tiers[%d].Object..Items.Items[%d].Object..AbilityClass,0,,BlueprintGeneratedClass'\"%s.%s_C\"'\r\n", classPath, classEnd, i, j, skillEnd, skillEnd);
 			}
 		}
 	}
