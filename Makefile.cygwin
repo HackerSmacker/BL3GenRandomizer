@@ -2,8 +2,8 @@ CC = gcc
 LD = gcc
 LDFLAGS =
 CFLAGS = -I. -O0
-OBJS = mkskillrand.o mkspawnrand.o mkitemrand.o GUI.o
-PROGS = mkskillrand mkspawnrand mkitemrand GUI
+OBJS = mkskillrand.o mkspawnrand.o mkitemrand.o GUI.o mkskillrand3.o
+PROGS = mkskillrand mkspawnrand mkitemrand GUI mkskillrand3
 MANUALS_PS = manual.ps
 MANUALS_PDF = manual.pdf
 MANUALS_TEXT = manual.txt
@@ -35,6 +35,8 @@ all: $(PROGS)
 $(PROGS): $(RES) $(OBJS)
 	@echo " LD    mkskillrand"
 	@$(LD) -o mkskillrand mkskillrand.o $(LDFLAGS)
+	@echo " LD    mkskillrand3"
+	@$(LD) -o mkskillrand3 mkskillrand3.o $(LDFLAGS)
 	@echo " LD    mkspawnrand"
 	@$(LD) -o mkspawnrand mkspawnrand.o $(LDFLAGS)
 	@echo " LD    mkitemrand"
@@ -47,6 +49,8 @@ manual: $(MANUALS_PS) $(MANUALS_PDF) $(MANUALS_TEXT)
 install: $(PROGS) manual
 	@echo " INSTALL    mkskillrand"
 	@install mkskillrand $(PREFIX)/bin
+	@echo " INSTALL    mkskillrand3"
+	@install mkskillrand3 $(PREFIX)/bin
 	@echo " INSTALL    mkspawnrand"
 	@install mkspawnrand $(PREFIX)/bin
 	@echo " INSTALL    mkitemrand"
@@ -55,6 +59,8 @@ install: $(PROGS) manual
 uninstall:
 	@echo " RM    mkskillrand"
 	@rm $(PREFIX)/bin/mkskillrand
+	@echo " RM    mkskillrand3"
+	@rm $(PREFIX)/bin/mkskillrand3
 	@echo " RM    mkspawnrand"
 	@rm $(PREFIX)/bin/mkspawnrand
 	@echo " RM    mkitemrand"
