@@ -2,8 +2,8 @@ CC = gcc
 LD = gcc
 LDFLAGS =
 CFLAGS = -I. -O0
-OBJS = mkskillrand3.o mkskillrand4.o mkskillblank.o mkspawnrand.o mkitemrand.o
-PROGS = mkskillrand3 mkskillrand4 mkskillblank mkspawnrand mkitemrand GUI.exe
+OBJS = mkskillrand3.o mkskillrand4.o mkskillblank.o mkspawnrand.o mkitemrand.o GUI.o
+PROGS = mkskillrand3 mkskillrand4 mkskillblank mkspawnrand mkitemrand GUI
 MANUALS_PS = manual.ps
 MANUALS_PDF = manual.pdf
 MANUALS_TEXT = manual.txt
@@ -14,9 +14,11 @@ all: $(PROGS)
 
 %.txt: %.ms
 	@echo " TROFF   " $< " TEXT"
-	# @groff -Tascii -ms -Z $< | grotty -c | sed 's/[\x01-\x1F\x7F]//g' | sed 's/\([A-Za-z.,()]\)\1\+/\1/g' > $@
 	@groff -Tascii -ms -Z $< | grotty -c | sed 's/[\x01-\x1F\x7F]//g' > $@
 
+%.res: %.rc
+	@echo " RC   " $<
+	@windres $< -O coff -o $@
 
 %.ps: %.ms
 	@echo " TROFF   " $<
@@ -30,11 +32,7 @@ all: $(PROGS)
 	@echo " CC   " $<
 	@$(CC) $(CFLAGS) -c -o $@ $<
 
-%.pb-c.c: %.proto
-	@echo " PROTOC   " $<
-	@protoc-c --c_out=. $<
-
-$(PROGS): $(OBJS)
+$(PROGS): $(RES) $(OBJS)
 	@echo " LD    mkskillrand3"
 	@$(LD) -o mkskillrand3 mkskillrand3.o $(LDFLAGS)
 	@echo " LD    mkskillrand4"
@@ -45,6 +43,8 @@ $(PROGS): $(OBJS)
 	@$(LD) -o mkspawnrand mkspawnrand.o $(LDFLAGS)
 	@echo " LD    mkitemrand"
 	@$(LD) -o mkitemrand mkitemrand.o $(LDFLAGS)
+	@echo " LD    GUI"
+	@$(LD) -o GUI GUI.o $(RES) $(LDFLAGS)
 
 manual: $(MANUALS_PS) $(MANUALS_PDF) $(MANUALS_TEXT)
 
@@ -71,4 +71,4 @@ uninstall:
 .PHONY: clean
 
 clean:
-	rm -f *.o Oak*.pb-c.* *.a $(MANUALS_PS) $(MANUALS_PDF) $(MANUALS_TEXT) $(PROGS) $(RES)
+	rm -f *.o Oak*.pb-c.* *.a $(MANUALS_PS) $(MANUALS_PDF) $(MANUALS_TEXT) $(PROGS)

@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdint.h>
+#include <time.h>
 #include "Spawns.h"
 
 
 
 int main(int argc, char** argv) {
+	srand(time(NULL));
 	char* filename = "";
 	if(argc < 2) {
 		filename = "spawn_randomizer.txt";
@@ -35,7 +36,7 @@ int main(int argc, char** argv) {
 	char* currentEndWithSlash;
 	char* currentEnd;
 	for(i = 0; i < listNumSpawnOptions - 1; i++) {
-		replaceChoice = (rand() % (listNumBPChars - 1)); 
+		replaceChoice = (rand() % (listNumBPChars - 1));
 		replacerPath = bpChars[replaceChoice];
 		replacerEndWithSlash = strrchr(replacerPath, '/');
 		replacerEnd = malloc(strlen(replacerEndWithSlash) - 1);
