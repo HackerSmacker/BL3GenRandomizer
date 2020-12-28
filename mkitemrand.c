@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdint.h>
+#include <time.h>
 #include "Items.h"
 
 
 
 int main(int argc, char** argv) {
+	srand(time(NULL));
 	char* filename = "";
 	if(argc < 2) {
 		filename = "item_randomizer.txt";
