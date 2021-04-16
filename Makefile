@@ -1,7 +1,10 @@
+# MAKEFILE FOR BL3GENRANDOMIZER
+# NOTE - PLEASE CUSTOMIZE THE BELOW OPTIONS FOR YOUR OPERATING SYSTEM AND SITE!
+
 CC = gcc
 LD = gcc
-LDFLAGS =
-CFLAGS = -I. -O0
+LDFLAGS = -L ../libblmod -l bl3mod
+CFLAGS = -I . -I ../libblmod -O0
 OBJS = mkskillrand.o mkspawnrand.o mkitemrand.o mkskillrand3.o
 PROGS = mkskillrand mkspawnrand mkitemrand GUI.exe mkskillrand3
 MANUALS_PS = manual.ps
