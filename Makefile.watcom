@@ -20,16 +20,16 @@ $(RES):
 	wrc -bt=nt -r GUIresources.rc
 
 $(PROGS): $(OBJS) $(RES)
-	wlink system $(SYSTEM) file mkitemrand.obj file $(LIBDIR)\\libbl3mod.lib
-	wlink system $(SYSTEM) file mkskillrand.obj file $(LIBDIR)\\libbl3mod.lib
-	wlink system $(SYSTEM) file mkskillrand3.obj file $(LIBDIR)\\libbl3mod.lib
-	wlink system $(SYSTEM) file mkspawnrand.obj file $(LIBDIR)\\libbl3mod.lib
+	wlink system $(SYSTEM) file mkitemrand.obj file $(LIBDIR)\libbl3mod.lib
+	wlink system $(SYSTEM) file mkskillrand.obj file $(LIBDIR)\libbl3mod.lib
+	wlink system $(SYSTEM) file mkskillrand3.obj file $(LIBDIR)\libbl3mod.lib
+	wlink system $(SYSTEM) file mkspawnrand.obj file $(LIBDIR)\libbl3mod.lib
 	
 $(GUIOBJS):
 	wcc386 $(CFLAGSGUI) -bw GUI.c
 
 $(GUIPROGS): $(GUIOBJS)
-	wlink system nt_win file GUI.obj file $(LIBDIR)\\libbl3mod.lib res GUIresources.res
+	wlink system nt_win file GUI.obj file $(LIBDIR)\libbl3mod.lib res GUIresources.res
 
 clean:
 	del $(OBJS) $(PROGS) *.res $(GUIPROGS) $(GUIOBJS)

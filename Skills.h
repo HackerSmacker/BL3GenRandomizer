@@ -18,7 +18,6 @@ char* skillTrees[] = {
 	"/Game/PlayerCharacters/Gunner/_DLC/Ixora/Character/AbilityTree_Gunner_DLCTree",
 	"/Game/PlayerCharacters/Operative/_DLC/Ixora/Character/AbilityTree_Operative_DLCTree",
 	"/Game/PlayerCharacters/SirenBrawler/_DLC/Ixora/Character/AbilityTree_Siren_DLCTree"
-
 };
 
 int listNumSkillTrees3 = 12;

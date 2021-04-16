@@ -1,0 +1,33 @@
+CC = cl
+LD = link
+LIBRARIES = libbl3mod.lib
+# Note - non-standard install path, I moved A LOT of the files around for organization.
+WINLIBS = D:\\Programs\\vsc2010\\WindowsSDK\\Lib\\\\x64\\user32.lib
+LIBDIR = ..\\libblmod
+CFLAGS = /c /I$(LIBDIR)
+OBJS = mkitemrand.obj mkskillrand.obj mkskillrand3.obj mkspawnrand.obj GUI.obj
+PROGS = mkitemrand.exe mkskillrand.exe mkskillrand3.exe mkspawnrand.exe GUI.exe
+GUIOBJS = GUI.obj
+GUIPROGS = GUI.exe
+RES = GUIresources.res
+
+all: $(PROGS)
+
+.SUFFIXES: .c .h .obj
+
+.c.obj:
+	$(CC) $(CFLAGS) $<
+
+$(PROGS): $(OBJS)
+	$(LD) /out:mkitemrand.exe mkitemrand.obj $(LIBDIR)\\libbl3mod.lib
+	$(LD) /out:mkskillrand.exe mkskillrand.obj $(LIBDIR)\\libbl3mod.lib
+	$(LD) /out:mkskillrand3.exe mkskillrand3.obj $(LIBDIR)\\libbl3mod.lib
+	$(LD) /out:mkspawnrand.exe mkspawnrand.obj $(LIBDIR)\\libbl3mod.lib
+	rc /r GUIresources.rc
+	$(LD) /out:GUI.exe GUI.obj $(LIBDIR)\\libbl3mod.lib $(WINLIBS) GUIresources.res
+
+
+.PHONY: clean
+
+clean:
+	del $(PROGS) $(OBJS) *.res

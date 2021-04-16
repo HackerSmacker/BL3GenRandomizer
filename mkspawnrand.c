@@ -17,6 +17,7 @@ int main(int argc, char** argv) {
 	int k;
 	char* line;
 	char* filename = "";
+	int choice;
 	srand(time(NULL));
 	if(argc < 2) {
 		filename = "spawn_randomizer.txt";
@@ -32,10 +33,12 @@ int main(int argc, char** argv) {
 	}
 	fprintf(outFile, fileHeader);
 	for(i = 0; i < listNumSpawnOptions - 1; i++) {
-		bzero(replacement, 512);
-		sprintf(replacement, "BlueprintGeneratedClass'\"%s\"'", end_object_c(bpChars[rand() % (listNumBPChars - 1)]));
+		choice = rand() % (listNumBPChars - 1);
+		memset(replacement, 0x00, 512);
+		sprintf(replacement, "BlueprintGeneratedClass'\"%s\"'", end_object_c(bpChars[choice]));
 		line = regular_hotfix(MOD_TYPE_EARLYLEVEL, extract_object(spawnOptions[i]), "Options.Options[0].Factory.Object..AIActorClass", replacement, 0);
 		fwrite(line, sizeof(char), strlen(line), outFile);
+		printf("%s is now a %s\n", spawnOptions[i], bpChars[choice]);
 	}
 	fprintf(outFile, fileFooter);
 	return 0;
