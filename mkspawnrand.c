@@ -8,14 +8,16 @@
 /* libbl3mod + randomizer */
 /* In theory, this should work perfectly. */
 
+FILE* outFile;
+
 int main(int argc, char** argv) {
 	char replacement[512];
 	int i;
 	int j;
 	int k;
 	char* line;
-	srand(time(NULL));
 	char* filename = "";
+	srand(time(NULL));
 	if(argc < 2) {
 		filename = "spawn_randomizer.txt";
 	}
@@ -23,7 +25,6 @@ int main(int argc, char** argv) {
 		filename = argv[1];
 	}
 	printf("MKSPAWNRAND Spawn randomizer generator. Use DLC = yes; output file = %s\n", filename);
-	FILE* outFile;
 	outFile = fopen(filename, "w");
 	if(!outFile) {
 		printf("MKSPAWNRAND Failed to open output file\n");

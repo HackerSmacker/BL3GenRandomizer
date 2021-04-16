@@ -9,3 +9,5 @@ Some additional notes:
 - These programs are not dynamically linked. You are not required
   to have libbl3mod or B3MT installed on your system.
 - This will eventually be merged into B3MT, when that releases in May.
+- Compiled with OpenWatcom because I don't want people to have to install
+  those crazy VSC/C++ redists.

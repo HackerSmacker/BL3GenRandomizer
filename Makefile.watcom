@@ -1,0 +1,35 @@
+SYSTEM = nt
+CC = wcc386
+LD = wlib
+CFLAGS = -bt=$(SYSTEM) -bc -i=..\libblmod
+CFLAGSGUI = -bt=nt -bw -bc -i=..\libblmod -i=D:\Programs\OWC\h\nt
+OBJS = mkitemrand.obj mkskillrand.obj mkskillrand3.obj mkspawnrand.obj
+PROGS = mkitemrand.exe mkskillrand.exe mkskillrand3.exe mkspawnrand.exe
+GUIOBJS = GUI.obj
+GUIPROGS = GUI.exe
+RES = GUIresources.res
+LIBRARIES = libbl3mod.lib
+LIBDIR = ..\libblmod
+
+all: $(PROGS) $(GUIPROGS)
+
+.c.obj:
+	$(CC) $(CFLAGS) $<
+
+$(RES):
+	wrc -bt=nt -r GUIresources.rc
+
+$(PROGS): $(OBJS) $(RES)
+	wlink system $(SYSTEM) file mkitemrand.obj file $(LIBDIR)\\libbl3mod.lib
+	wlink system $(SYSTEM) file mkskillrand.obj file $(LIBDIR)\\libbl3mod.lib
+	wlink system $(SYSTEM) file mkskillrand3.obj file $(LIBDIR)\\libbl3mod.lib
+	wlink system $(SYSTEM) file mkspawnrand.obj file $(LIBDIR)\\libbl3mod.lib
+	
+$(GUIOBJS):
+	wcc386 $(CFLAGSGUI) -bw GUI.c
+
+$(GUIPROGS): $(GUIOBJS)
+	wlink system nt_win file GUI.obj file $(LIBDIR)\\libbl3mod.lib res GUIresources.res
+
+clean:
+	del $(OBJS) $(PROGS) *.res $(GUIPROGS) $(GUIOBJS)

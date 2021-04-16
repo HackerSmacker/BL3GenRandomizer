@@ -7,6 +7,7 @@
 
 /* MKSKILLRAND - 4 TREE EDITION */
 
+FILE* outFile;
 
 int main(int argc, char** argv) {
 	int i;
@@ -27,7 +28,6 @@ int main(int argc, char** argv) {
 		filename = argv[1];
 	}
 	printf("MKSKILLRAND Skill randomizer generator. Trees = 3; output file = %s\n", filename);
-	FILE* outFile;
 	outFile = fopen(filename, "w");
 	if(!outFile) {
 		printf("MKSKILLRAND Failed to open output file\n");

@@ -4,11 +4,16 @@
 #include <time.h>
 #include "Items.h"
 
+FILE* outFile;
 
 
 int main(int argc, char** argv) {
-	srand(time(NULL));
+	int i;
+	int j;
+	int k;
+	int replaceChoice;
 	char* filename = "";
+	srand(time(NULL));
 	if(argc < 2) {
 		filename = "item_randomizer.txt";
 	}
@@ -16,20 +21,14 @@ int main(int argc, char** argv) {
 		filename = argv[1];
 	}
 	printf("MKITEMRAND Item randomizer generator. Use DLC = yes; output file = %s\n", filename);
-	FILE* outFile;
 	outFile = fopen(filename, "w");
 	if(!outFile) {
 		printf("MKITEMRAND Failed to open output file\n");
 		exit(1);
 	}
-
 	fprintf(outFile, fileHeader);
-	int i;
-	int j;
-	int k;
-	int replaceChoice;
 	for(i = 0; i < listNumBalanceWeapon - 1; i++) {
-
+		printf(".");
 	}
 	fprintf(outFile, fileFooter);
 	return 0;

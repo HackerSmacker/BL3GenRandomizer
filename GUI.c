@@ -215,13 +215,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 	return 0;
 }
 
+WNDCLASSEX wc;
+HWND hwnd;
+MSG msg;
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
+//int WINAPI main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {	
 	ZeroMemory(&si, sizeof(si));
 	ZeroMemory(&pi, sizeof(pi));
 	MessageBox(NULL, "Warning: this is largely untested and has a chance of crashing your game. Please report any bugs you find as soon as you can.", "Beta software", MB_OK);
-	WNDCLASSEX wc;
-	HWND hwnd;
-	MSG msg;
 	wc.cbSize = sizeof(WNDCLASSEX);
 	wc.style = 0;
 	wc.lpfnWndProc = WndProc;
