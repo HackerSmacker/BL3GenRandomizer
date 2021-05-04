@@ -36,7 +36,7 @@ BOOL CALLBACK SpawnsDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 			case IDC_SPAWNS_OPEN:
 			{
 				if(!(CreateProcessA(NULL, "notepad.exe spawn_randomizer.txt", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))) {
-					MessageBox(hwnd, "Failed to open notepad.", "Error", MB_OK);
+					MessageBox(hwnd, "Failed to open Notepad.", "Error", MB_OK);
 				}
 				else {
 					WaitForSingleObject(pi.hProcess, INFINITE);
@@ -81,7 +81,7 @@ BOOL CALLBACK ItemsDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 			case IDC_ITEMS_OPEN:
 			{
 				if(!(CreateProcessA(NULL, "notepad.exe item_randomizer.txt", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))) {
-					MessageBox(hwnd, "Failed to open notepad.", "Error", MB_OK);
+					MessageBox(hwnd, "Failed to open Notepad.", "Error", MB_OK);
 				}
 				else {
 					WaitForSingleObject(pi.hProcess, INFINITE);
@@ -126,7 +126,7 @@ BOOL CALLBACK SkillsDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 			case IDC_SKILLS_OPEN:
 			{
 				if(!(CreateProcessA(NULL, "notepad.exe skill_randomizer.txt", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))) {
-					MessageBox(hwnd, "Failed to open notepad.", "Error", MB_OK);
+					MessageBox(hwnd, "Failed to open Notepad.", "Error", MB_OK);
 				}
 				else {
 					WaitForSingleObject(pi.hProcess, INFINITE);
@@ -143,6 +143,7 @@ BOOL CALLBACK SkillsDlgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 	}
 	return TRUE;
 }
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 	switch(msg) {
 		case WM_CREATE:
@@ -171,7 +172,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 					DestroyWindow(hwnd);
 					break;
 				case ID_HELP_ABOUT:
-					MessageBox(hwnd, "This is the user interface for the mkrandomizer programs. Written by HackerSmacker and SSpyR. This is public-domain software and neither of us are responsible for any of the outcomes that you may incur using this program.", "About", MB_OK);
+					MessageBox(hwnd, "User interface for the BL3 Randomizer Generator. For more information, go to https://github.com/HackerSmacker/BL3GenRandomizer and be sure to check the included documentation.", "About", MB_OK);
 					break;
 				case ID_FUNC_SPAWNS:
 					g_hSpawnsDialog = CreateDialog(GetModuleHandle(NULL), MAKEINTRESOURCE(IDD_SPAWNS), hwnd, SpawnsDlgProc);
@@ -194,6 +195,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 			}
 		break;
 		/* For path debugging
+		DO NOT ENABLE THIS UNLESS YOU REALLY NEED IT!
 		case WM_LBUTTONDOWN:
 		{
 			char szFileName[MAX_PATH];
@@ -220,10 +222,9 @@ HWND hwnd;
 MSG msg;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-//int WINAPI main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {	
 	ZeroMemory(&si, sizeof(si));
 	ZeroMemory(&pi, sizeof(pi));
-	MessageBox(NULL, "Warning: this is largely untested and has a chance of crashing your game. Please report any bugs you find as soon as you can.", "Beta software", MB_OK);
+	// MessageBox(NULL, "Warning: this is largely untested and has a chance of crashing your game. Please report any bugs you find as soon as you can.", "Beta software", MB_OK);
 	wc.cbSize = sizeof(WNDCLASSEX);
 	wc.style = 0;
 	wc.lpfnWndProc = WndProc;
@@ -242,7 +243,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 	hwnd = CreateWindowEx(WS_EX_CLIENTEDGE, g_szClassName, "BL3 Randomzier Generators", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,	CW_USEDEFAULT, 400, 60, NULL, NULL, hInstance, NULL);
 	if(hwnd	== NULL) {
-		MessageBox(NULL, "Failed to create window...", "Massive issue", MB_OK | MB_ICONEXCLAMATION);
+		MessageBox(NULL, "Failed to create window... you've got a real issue!", "Massive issue", MB_OK | MB_ICONEXCLAMATION);
 	}
 	ShowWindow(hwnd, nCmdShow);
 	UpdateWindow(hwnd);
