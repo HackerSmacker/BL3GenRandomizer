@@ -5,9 +5,6 @@ mkskillrand - 4-tree skill randomizer
 mkspawnrand - Enemy spawn randomizer
 mkitemrand - Item randomizer (currently unfinished)
 
-Some additional notes:
-- These programs are not dynamically linked. You are not required
-  to have libbl3mod or B3MT installed on your system.
-- This will eventually be merged into B3MT, when that releases in May.
-- Compiled with OpenWatcom because I don't want people to have to install
-  those crazy VSC/C++ redists.
+There is also a GUI. To run this program, download a "release"
+and extract it to some folder. Run any of the programs contained
+within, or run the GUI. 
