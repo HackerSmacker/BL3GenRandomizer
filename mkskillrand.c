@@ -24,7 +24,7 @@ int main(int argc, char** argv) {
 	int choice;
 	srand(time(NULL));
 	if(argc < 2) {
-		filename = "skill_randomizer.txt";
+		filename = "skill_randomizer.bl3hotfix";
 	}
 	else {
 		filename = argv[1];

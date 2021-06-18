@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
 	int choice;
 	srand(time(NULL));
 	if(argc < 2) {
-		filename = "skill_randomizer3.txt";
+		filename = "skill_randomizer3.bl3hotfix";
 	}
 	else {
 		filename = argv[1];

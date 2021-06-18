@@ -18,9 +18,11 @@ int main(int argc, char** argv) {
 	char* line;
 	char* filename = "";
 	int choice;
+	printf("!!!!!!!!!!! WARNING WARNING WARNING !!!!!!!!!!!\n");
+	printf("This generator has a good chance to CRASH your game!\n");
 	srand(time(NULL));
 	if(argc < 2) {
-		filename = "spawn_randomizer.txt";
+		filename = "spawn_randomizer.bl3hotfix";
 	}
 	else {
 		filename = argv[1];
