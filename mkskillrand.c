@@ -6,6 +6,8 @@
 #include <bl3mod.h>
 
 /* MKSKILLRAND - 4 TREE EDITION */
+/* 2021, HackerSmacker */
+
 
 FILE* outFile;
 

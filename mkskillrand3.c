@@ -5,7 +5,8 @@
 #include "Skills.h"
 #include <bl3mod.h>
 
-/* MKSKILLRAND - 4 TREE EDITION */
+/* MKSKILLRAND - 3 TREE EDITION */
+/* 2021, HackerSmacker */
 
 FILE* outFile;
 

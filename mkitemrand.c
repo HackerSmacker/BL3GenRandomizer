@@ -4,6 +4,9 @@
 #include <time.h>
 #include "Items.h"
 
+/* BL3 Item Randomizer */
+/* 2021, HackerSmacker */
+
 FILE* outFile;
 
 

@@ -7,6 +7,7 @@
 
 /* libbl3mod + randomizer */
 /* In theory, this should work perfectly. */
+/* 2021, HackerSmacker */
 
 FILE* outFile;
 

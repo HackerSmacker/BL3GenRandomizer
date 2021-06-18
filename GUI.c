@@ -1,6 +1,10 @@
 #include <windows.h>
 #include "GUIresourceID.h"
 
+/* GUI for the randomizers. */
+/* Should compile with any Win32 capable C compiler, Cygwin is used for the */
+/* "reference compile" but MSVC and Watcom work too. */
+
 char g_szClassName[] = "b3grWindowClass";
 
 HWND g_hSpawnsDialog = NULL;
